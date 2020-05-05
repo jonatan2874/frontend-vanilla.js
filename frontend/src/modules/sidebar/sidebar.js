@@ -1,8 +1,6 @@
 import {sidebarItem} from './sidebarItem.js';
 /** Importacion de los modulos del app */
-import {usuarios} from '../usuarios/usuarios.js'
-
-var contentUsuarios = usuarios();
+// import {usuarios} from '../usuarios/usuarios.js'
 
 const sidebar = () => {
     // tipos de items (divider,heading,item)
@@ -22,7 +20,7 @@ const sidebar = () => {
                             type : 'item',
                             text  : 'Usuarios',
                             icon : 'fa-user',
-                            content : usuarios()
+                            modulo : 'usuarios'
                         },
                         {
                             type : 'item',
@@ -74,5 +72,3 @@ const sidebar = () => {
 }
 
 export {sidebar};
-
-var EXPORTED_SYMBOLS = ["contentUsuarios"]

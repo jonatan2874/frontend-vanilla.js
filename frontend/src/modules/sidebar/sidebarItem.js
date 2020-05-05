@@ -1,16 +1,8 @@
 const sidebarItem = (params = null, key)=>{
-    const { type, text, icon, items} = params;
-    let content = ``;
-
-    const changeContent = () =>{
-        console.log('in')
-        if(params.content){
-            // document.getElementById('main-content').innerHTML = params.content;
-        }
-    }
+    const { type, text, icon, items, modulo} = params;
+    let content = ``;    
 
     const render = ()=>{
-        // console.log(params.content)
         if(type=='divider'){
             content = `<hr class="sidebar-divider">`;
         }
@@ -36,7 +28,7 @@ const sidebarItem = (params = null, key)=>{
                             </li>`;
             }
             else{
-                content = ` <li class="nav-item" onclick="function render(){${changeContent}}">
+                content = ` <li class="nav-item" onclick=' ${!modulo? '' : modulo }()'>
                                 <a class="nav-link" href="#">
                                 <i class="fas fa-fw ${icon}"></i>
                                 <span>${text}</span></a>
